@@ -29,6 +29,7 @@ test('TC014_invalid_Login_test', async({page}) => {
     const loginPage = new LoginPage(page);
     await loginPage.login(td.TC01.username,td.TC01.password);
     await expect(loginPage.verifyErrorMsg()).toBeTruthy();
+    await expect(loginPage.verifyErrorMsg()).toBeTruthy();
 
 
 });
