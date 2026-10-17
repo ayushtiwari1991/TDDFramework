@@ -23,3 +23,12 @@ test('TC02_valid_Login_test', async({page}) => {
     await expect(homePage.verifyHomeLink()).toBeTruthy();
 
 });
+
+test('TC014_invalid_Login_test', async({page}) => { 
+    await page.goto('/');
+    const loginPage = new LoginPage(page);
+    await loginPage.login(td.TC01.username,td.TC01.password);
+    await expect(loginPage.verifyErrorMsg()).toBeTruthy();
+
+
+});
